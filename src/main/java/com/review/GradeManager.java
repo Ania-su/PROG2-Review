@@ -27,7 +27,7 @@ public class GradeManager {
         double sum = 0;
         int totalCoefficient = 0;
         for (Grade grade : gradeList) {
-            float value = (float) grade.getGradeAt(t);
+            double value = grade.getGradeAt(t);
             int coefficient = grade.getExam().getCoefficient();
 
             sum += value * coefficient;

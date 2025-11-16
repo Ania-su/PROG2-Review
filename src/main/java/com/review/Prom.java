@@ -3,20 +3,17 @@ package com.review;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 
 public class Prom {
-    public enum prom{
-        G,
-        H,
-        J,
-        K,
-        N;
-    }
+    private String year;
+    private List<String> groups;
 
-    private prom prom;
-    public Prom(prom prom){
-        this.prom = prom;
+    public Prom(String year, List<String> groups) {
+        this.year = year;
+        this.groups = groups;
     }
 }

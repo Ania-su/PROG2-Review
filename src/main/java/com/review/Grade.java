@@ -16,7 +16,7 @@ public class Grade {
     private Student student;
     private Exam exam;
     private Course course;
-    private float initialGrade;
+    private double initialGrade;
     private List<GradeHistory> history = new ArrayList<>();
 
     public void addChange(double newGrade, String reason) {
@@ -27,7 +27,7 @@ public class Grade {
         double grade = initialGrade;
 
         for (GradeHistory history : history) {
-            if (history.getTimestamp().compareTo(t) >= 0) {
+            if (history.getTimestamp().isBefore(t) || history.getTimestamp().equals(t)) {
                 grade = history.getNewGrade();
             }
         }
